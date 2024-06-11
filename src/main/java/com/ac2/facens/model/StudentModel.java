@@ -10,8 +10,16 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class StudentModel {
+    private static long count = 0;
     private long id;
     private String name;
     private LocalDate birthday;
     private ListaSE subjects;
+
+    public StudentModel(String name, LocalDate birthday) {
+        this.id += count;
+        this.name = name;
+        this.birthday = birthday;
+        this.subjects = new ListaSE();
+    }
 }
