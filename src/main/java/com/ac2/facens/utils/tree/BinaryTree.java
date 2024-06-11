@@ -1,5 +1,9 @@
-package com.ac2.facens;
+package com.ac2.facens.utils.tree;
 
+import com.ac2.facens.model.StudentModel;
+import org.springframework.stereotype.Component;
+
+@Component
 public class BinaryTree {
     NodeTree root;
 
@@ -7,30 +11,30 @@ public class BinaryTree {
         root = null;
     }
 
-    public void insert(int key) {
-        root = insertRec(root, key);
+    public void insert(StudentModel student) {
+        root = insertRec(root, student);
     }
 
-    private NodeTree insertRec(NodeTree root, int key) {
+    private NodeTree insertRec(NodeTree root, StudentModel student) {
         if (root == null) {
-            root = new NodeTree(key);
+            root = new NodeTree(student);
             return root;
         }
 
-        if (key < root.key) {
-            root.left = insertRec(root.left, key);
-        } else if (key > root.key) {
-            root.right = insertRec(root.right, key);
+        if (student.getId() < root.key) {
+            root.left = insertRec(root.left, student);
+        } else if (student.getId() > root.key) {
+            root.right = insertRec(root.right, student);
         }
 
         return root;
     }
 
-    public boolean search(int key) {
+    public boolean search(long key) {
         return searchRec(root, key);
     }
 
-    private boolean searchRec(NodeTree root, int key) {
+    private boolean searchRec(NodeTree root, long key) {
         if (root == null) {
             return false;
         }

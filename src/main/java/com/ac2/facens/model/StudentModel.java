@@ -1,7 +1,7 @@
 package com.ac2.facens.model;
 
-import java.util.Date;
-import com.ac2.facens.ListaSE;
+import java.time.LocalDate;
+import com.ac2.facens.utils.list.ListaSE;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,9 +9,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class studentModel {
-    private int id;
+public class StudentModel {
+    private long id;
     private String name;
-    private Date birthday;
+    private LocalDate birthday;
     private ListaSE subjects;
 }
