@@ -2,9 +2,11 @@ package com.ac2.facens.api.services;
 
 import com.ac2.facens.model.StudentModel;
 import com.ac2.facens.utils.tree.BinaryTree;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 @Service
@@ -16,7 +18,7 @@ public class StudentService {
     //TODO: todos os trechos comentados precisam ser implementados corretamente, estamos com um problema porque os metodos search retornam boolean e faltam alguns métodos dentro da arvore
 
     public void addStudent(long id, String name, LocalDate birthday) {
-        StudentModel student = new StudentModel(id, name, birthday, null);
+        StudentModel student = new StudentModel(name, birthday);
         binaryTree.insert(student);
     }
 
@@ -40,5 +42,15 @@ public class StudentService {
         //if (student != null) {
             //student.getSubjects().remove(subjectId);
         //}
+    }
+
+
+    @PostConstruct
+    public void init() {
+        try {
+            addStudent();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
