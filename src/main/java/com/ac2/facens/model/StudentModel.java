@@ -42,9 +42,4 @@ public class StudentModel {
         subjects.insert(subject);
     }
 
-    public void removeSubject(long subjectId) {
-        if (!subjects.remove(subjectId)) {
-            throw new IllegalArgumentException("Disciplina não encontrada.");
-        }
-    }
 }

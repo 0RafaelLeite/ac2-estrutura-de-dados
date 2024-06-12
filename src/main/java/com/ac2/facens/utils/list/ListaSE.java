@@ -2,7 +2,6 @@ package com.ac2.facens.utils.list;
 
 import com.ac2.facens.model.SubjectModel;
 
-import java.util.Optional;
 
 public class ListaSE {
     Node head;
@@ -52,15 +51,5 @@ public class ListaSE {
             current = current.next;
         }
         return count;
-    }
-
-    public void display() {
-        // Exibe os elementos da lista.
-        Node current = this.head;
-        while (current != null) {
-            System.out.print(current.subject + " -> ");
-            current = current.next;
-        }
-        System.out.println("None");
     }
 }
