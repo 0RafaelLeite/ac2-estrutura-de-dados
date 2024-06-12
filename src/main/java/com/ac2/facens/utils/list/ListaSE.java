@@ -2,9 +2,10 @@ package com.ac2.facens.utils.list;
 
 import com.ac2.facens.model.SubjectModel;
 
+import java.util.Optional;
+
 public class ListaSE {
-    Node head; // Cabeça da lista
-    SubjectModel subjectList;
+    Node head;
 
     public ListaSE() {
         this.head = null;
@@ -18,7 +19,10 @@ public class ListaSE {
     }
 
     public void insert(long id) {
-        //subjectList
+        String subject = SubjectModel.getSubjects().get(id);
+        if (subject.isEmpty()){
+            insert(new SubjectModel(id, subject));
+        }
     }
 
     public boolean remove(long id) {

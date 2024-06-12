@@ -22,8 +22,7 @@ public class StudentService {
     
     @Autowired
     private BinaryTree binaryTree;
-
-    //TODO: todos os trechos comentados precisam ser implementados corretamente, estamos com um problema porque os metodos search retornam boolean e faltam alguns métodos dentro da arvore
+    private StudentModel subjectList;
 
     public void addStudent(String name, LocalDate birthday) {
         StudentModel student = new StudentModel(name, birthday);
@@ -46,18 +45,16 @@ public class StudentService {
         binaryTree.delete(id);
     }
 
-    public void addSubject(long studentId, long subjectId) {
-        Optional<StudentModel> student = binaryTree.search(studentId);
-        if (student.isPresent()) {
-            student.get().getSubjects().insert(subjectId);
-        }
-    }
+    //TODO: Encontrar uma solução de adicionar pelo id e não pelo objeto. Até lá os métodos de adição ficarão desabilitados
+
+   // public void addSubject(long studentId, long subjectId) {
+        //Optional<StudentModel> student = binaryTree.search(studentId);
+       // student.ifPresent(studentModel -> studentModel.getSubjects().insert(subjectId));
+  //  }
 
     public void removeSubject(long studentId, long subjectId) {
-        //StudentModel student = binaryTree.search(studentId);
-       // if (student != null) {
-            //student.getSubjects().remove(subjectId);
-        //}
+        Optional<StudentModel> student = binaryTree.search(studentId);
+        student.ifPresent(studentModel -> studentModel.getSubjects().remove(subjectId));
     }
 
 

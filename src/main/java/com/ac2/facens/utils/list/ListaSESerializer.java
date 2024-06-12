@@ -1,6 +1,5 @@
 package com.ac2.facens.utils.list;
 
-import com.ac2.facens.model.SubjectModel;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
@@ -31,4 +30,3 @@ public class ListaSESerializer extends StdSerializer<ListaSE> {
         jsonGenerator.writeEndArray();
     }
 }
-
