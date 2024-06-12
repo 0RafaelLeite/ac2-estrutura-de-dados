@@ -30,7 +30,7 @@ public class StudentService {
     }
 
     public void addStudent(StudentModel student) {
-        binaryTree.insert(student);
+        binaryTree.insert(student);;;;
     }
 
     public Optional<StudentModel> getStudent(long id) {
@@ -79,19 +79,19 @@ public class StudentService {
                     new StudentModel("Marcelo Duarte", LocalDate.parse("2002-01-29")),
                     new StudentModel("Beatriz Pires", LocalDate.parse("2003-05-14")),
                     new StudentModel("Carlos Mendes", LocalDate.parse("2004-06-25")),
-                    new StudentModel("Patricia Nunes", LocalDate.parse("2001-12-05")),
-                    new StudentModel("Sergio Batista", LocalDate.parse("2002-03-17")),
-                    new StudentModel("Joana Monteiro", LocalDate.parse("2003-08-21")),
-                    new StudentModel("Thiago Cunha", LocalDate.parse("2004-09-19")),
-                    new StudentModel("Monica Farias", LocalDate.parse("2005-07-11")),
-                    new StudentModel("Renato Lima", LocalDate.parse("2001-02-04")),
-                    new StudentModel("Simone Martins", LocalDate.parse("2002-10-15")),
-                    new StudentModel("Fabio Antunes", LocalDate.parse("2003-11-26")),
-                    new StudentModel("Claudia Teixeira", LocalDate.parse("2004-01-08")),
-                    new StudentModel("Jorge Carvalho", LocalDate.parse("2005-03-19")),
-                    new StudentModel("Elaine Rodrigues", LocalDate.parse("2001-06-21")),
-                    new StudentModel("Ricardo Campos", LocalDate.parse("2002-08-11")),
-                    new StudentModel("Vanessa Souza", LocalDate.parse("2003-09-30"))
+                    new StudentModel("Patricia Nunes", LocalDate.parse("2001-12-05"))
+                    //new StudentModel("Sergio Batista", LocalDate.parse("2002-03-17")),
+                    //new StudentModel("Joana Monteiro", LocalDate.parse("2003-08-21")),
+                    //new StudentModel("Thiago Cunha", LocalDate.parse("2004-09-19")),
+                    //new StudentModel("Monica Farias", LocalDate.parse("2005-07-11")),
+                    //new StudentModel("Renato Lima", LocalDate.parse("2001-02-04")),
+                    //new StudentModel("Simone Martins", LocalDate.parse("2002-10-15")),
+                    //new StudentModel("Fabio Antunes", LocalDate.parse("2003-11-26")),
+                    //new StudentModel("Claudia Teixeira", LocalDate.parse("2004-01-08")),
+                    //new StudentModel("Jorge Carvalho", LocalDate.parse("2005-03-19")),
+                    //new StudentModel("Elaine Rodrigues", LocalDate.parse("2001-06-21")),
+                    //new StudentModel("Ricardo Campos", LocalDate.parse("2002-08-11")),
+                    //new StudentModel("Vanessa Souza", LocalDate.parse("2003-09-30"))
             );
 
             List<SubjectModel> team1 = Arrays.asList(
