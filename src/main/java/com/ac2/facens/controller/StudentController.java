@@ -6,23 +6,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/students")
 public class StudentController {
+
     @Autowired
     private StudentService studentService;
 
     @PostMapping
-    public void addStudent(@RequestParam int id, @RequestParam String name, @RequestParam String birthday) {
+    public void addStudent(@RequestParam String name, @RequestParam String birthday) {
         LocalDate birthDate = LocalDate.from(java.time.LocalDate.parse(birthday).atStartOfDay().atZone(java.time.ZoneId.systemDefault()).toInstant());
-        studentService.addStudent(id, name, birthDate);
+        studentService.addStudent(name, birthDate);
     }
 
     @GetMapping("/{id}")
-    public StudentModel getStudent(@PathVariable int id) {
-        //return studentService.getStudent(id);
-        return new StudentModel(null, null);
+    public Optional<StudentModel> getStudent(@PathVariable int id) {
+        return studentService.getStudent(id);
     }
 
     @DeleteMapping("/{id}")
@@ -38,6 +40,10 @@ public class StudentController {
     @DeleteMapping("/{studentId}/subjects/{subjectId}")
     public void removeSubject(@PathVariable int studentId, @PathVariable int subjectId) {
         studentService.removeSubject(studentId, subjectId);
+    }
+    @GetMapping("/detailed")
+    public List<StudentModel> getAllStudents() {
+        return studentService.getAllStudents();
     }
 }
 

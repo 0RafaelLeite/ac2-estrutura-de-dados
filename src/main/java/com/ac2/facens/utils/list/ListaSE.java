@@ -3,7 +3,8 @@ package com.ac2.facens.utils.list;
 import com.ac2.facens.model.SubjectModel;
 
 public class ListaSE {
-    private Node head; // Cabeça da lista
+    Node head; // Cabeça da lista
+    SubjectModel subjectList;
 
     public ListaSE() {
         this.head = null;
@@ -14,6 +15,10 @@ public class ListaSE {
         Node new_node = new Node(data);
         new_node.next = this.head;
         this.head = new_node;
+    }
+
+    public void insert(long id) {
+        //subjectList
     }
 
     public boolean remove(long id) {
@@ -33,6 +38,16 @@ public class ListaSE {
             current = current.next;
         }
         return false; // Dado não encontrado
+    }
+
+    public int size(){
+        int count = 0;
+        Node current = this.head;
+        while (current != null) {
+            count+=1;
+            current = current.next;
+        }
+        return count;
     }
 
     public void display() {
